@@ -4,8 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "cli": "tsc && env NODE_PATH=\"./dist/src\" node dist/src/entrypoints/cli.js",
-        "server": "tsc && env NODE_PATH=\"./dist/src\" node dist/src/entrypoints/server.js",
+        "build": "npm ci && tsc",
+        "cli": "env NODE_PATH=\"./dist/src\" node dist/src/entrypoints/cli.js",
+        "server": "env NODE_PATH=\"./dist/src\" node dist/src/entrypoints/server.js",
         "test": "jest"
     },
     "author": "",
