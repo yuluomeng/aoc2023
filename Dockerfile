@@ -3,7 +3,10 @@ WORKDIR /build
 COPY . .
 RUN npm run build
 
-FROM gcr.io/distroless/nodejs20-debian11
-COPY --from=build /build/dist .
-CMD ["node", "src/entrypoints/server.js"]
+FROM node:20-alpine
+WORKDIR /aoc2023
+COPY --from=build /build/dist ./dist/
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
+CMD ["npm", "run", "server"]
 EXPOSE 3000

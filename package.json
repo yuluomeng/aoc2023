@@ -5,8 +5,8 @@
     "main": "index.js",
     "scripts": {
         "build": "npm ci && tsc",
-        "cli": "tsc && env NODE_PATH=\"./dist/src\" node dist/src/entrypoints/cli.js",
-        "server": "tsc && env NODE_PATH=\"./dist/src\" node dist/src/entrypoints/server.js",
+        "cli": "env NODE_PATH=\"./dist/src\" node dist/src/entrypoints/cli.js",
+        "server": "env NODE_PATH=\"./dist/src\" node dist/src/entrypoints/server.js",
         "test": "jest"
     },
     "author": "",
