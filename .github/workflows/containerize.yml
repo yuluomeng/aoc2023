@@ -32,5 +32,6 @@ jobs:
                   LONG_TAG: ${{ github.sha }}
               run: |
                   export IMAGE_TAG=$(git rev-parse --short $LONG_TAG)
+                  echo $IMAGE_TAG
                   docker build -t $IMAGE_TAG .
                   docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
