@@ -1,0 +1,18 @@
+# This workflow will build the Docker container and tag it in preparation for deployment.
+
+name: Containerize
+
+on: workflow_dispatch
+
+jobs:
+    containerize:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+
+            - name: Testing
+              env:
+                  IMAGE_TAG: git rev-parse --short ${{ github.sha }}
+              run: echo $IMAGE_TAG
