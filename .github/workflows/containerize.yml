@@ -14,5 +14,5 @@ jobs:
 
             - name: Testing
               env:
-                  IMAGE_TAG: git rev-parse --short ${{ github.sha }}
-              run: echo $IMAGE_TAG
+                  LONG_TAG: ${{ github.sha }}
+              run: export IMAGE_TAG=$(git rev-parse --short HEAD) && echo $IMAGE_TAG
