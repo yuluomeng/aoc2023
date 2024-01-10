@@ -4,6 +4,9 @@ name: Containerize
 
 on: workflow_dispatch
 
+permissions:
+    id-token: write
+
 jobs:
     containerize:
         runs-on: ubuntu-latest
